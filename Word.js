@@ -5,3 +5,10 @@ A function that returns a string representing the word. This should call the fun
 A function that takes a character as an argument and calls the guess function on each letter object (the second function defined in Letter.js)
  * 
  */
+
+  //Start Word() constr
+
+  function Word() {
+
+
+  }; //end Word() contr

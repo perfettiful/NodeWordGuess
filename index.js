@@ -8,4 +8,22 @@ Prompts the user for each guess and keeps track of the user's remaining guesses
  //Global npm packages needed:
 
  var inquirer = require("inquirer");
- var prompt = require('prompt');
+
+//Global vars to track during game
+
+var guessesLeft = 9;
+
+
+ inquirer.prompt([
+
+    {
+        type: "input",
+        name: "userGuess",
+        message: "Guess a letter!"
+    }
+ ]).then(function(userInput){
+
+//if(userInput.userGuess === ){}
+
+
+ });//end prompt()
