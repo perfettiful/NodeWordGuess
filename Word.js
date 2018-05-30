@@ -6,9 +6,52 @@ A function that takes a character as an argument and calls the guess function on
  * 
  */
 
+
+ const Letter = require('./Letter');
   //Start Word() constr
 
-  function Word() {
+  function Word(word) {
 
+this.letters = word.split("").map(function(char){
+    return new Letter(char);
+})
 
   }; //end Word() contr
+  
+  
+  Word.prototype.getSolution=function(){
+      return this.letters.map(function(letter){
+
+        return letter.getSolution()
+      }).join();
+
+  }
+
+Word.prototype.toString=function(){
+    return this.letters.join();
+
+}
+
+//guess
+Word.prototype.guess =function(char){
+   var foundLetter = false;
+   this.letters.forEach(function(letter) {
+    if (letter.guess(char)) {
+      foundLetter = true;
+    }
+  });
+
+  // Print the word guessed so far--because we set the method for toString,
+  //  JavaScript will automatically concatenate this even if we don't call toString
+  console.log("\n" + this + "\n");
+  // return whether we found a letter
+  return foundLetter;
+}
+//gu
+// Returns true if all letters in the word have been guessed
+Word.prototype.guessedCorrectly = function() {
+    // The `every` method returns true if the callback function returns true for every element in the array
+    return this.letters.every(function(letter) {
+      return letter.visible;
+    });
+  };

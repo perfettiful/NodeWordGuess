@@ -23,6 +23,7 @@
   "homepage": "https://github.com/perfettiful/NodeWordGuess#readme",
   "dependencies": {
     "inquirer": "^5.2.0",
-    "prompt": "^1.0.0"
+    "prompt": "^1.0.0",
+    "randomwords": "^1.0.3"
   }
 }
